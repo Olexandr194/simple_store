@@ -1,222 +1,253 @@
+@extends('layouts.main')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Simple Store</title>
-    <meta charset="utf-8">
-    <meta name="author" content="pixelhint.com">
-    <meta name="description" content="Sublime Stunning free HTML5/CSS3 website template"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/fancybox-thumbs.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/fancybox-buttons.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/fancybox.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+@section('title', 'Home')
 
-    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/fancybox.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/fancybox-buttons.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/fancybox-media.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/fancybox-thumbs.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/wow.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
-</head>
-<body>
+@section('content')
+    <!-- Home -->
 
-<section class="billboard dark">
-    <header class="wrapper dark">
-        <a href="#"><img class="logo" src="{{ asset('img/logo_dark.png') }}" alt=""/></a>
-        <nav>
-            <ul>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Products</a></li>
-                <li><a href="">Journal</a></li>
-                <li><a href="">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="home">
+        <div class="home_slider_container">
 
-    <div class="caption dark animated wow fadeInDown clearfix">
-        <h1>Welcome To Simple Store</h1>
-        <p>the best test store website in whole world!</p>
-        <hr>
-    </div>
-    <div class="shadow"></div>
-</section><!--  End billboard  -->
+            <!-- Home Slider -->
+            <div class="owl-carousel owl-theme home_slider">
 
+                <!-- Slider Item -->
+                <div class="owl-item home_slider_item">
+                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="home_slider_content_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
+                                        <div class="home_slider_title">A new Online Shop experience.</div>
+                                        <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
+                                        <div class="button button_light home_button"><a href="#">Shop Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<section class="services wrapper">
-    <ul class="clearfix">
-        <li class="animated wow fadeInDown">
-            <img class="icon" src="{{ asset('img/icon1.png') }}" alt=""/>
-            <span class="separator"></span>
-            <h2>Officia Deserunt Mollit</h2>
-            <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua voluptate velit esse
-                cillum dolore.</p>
-        </li>
-        <li class="animated wow fadeInDown"  data-wow-delay=".2s">
-            <img class="icon" src="{{ asset('img/icon2.png') }}" alt=""/>
-            <span class="separator"></span>
-            <h2>Culpa Killum Dolore</h2>
-            <p>aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </li>
-        <li class="animated wow fadeInDown"  data-wow-delay=".4s">
-            <img class="icon" src="{{ asset('img/icon3.png') }}" alt=""/>
-            <span class="separator"></span>
-            <h2>Elit Tempor Incididunt</h2>
-            <p>nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat enim ad minim veniam.</p>
-        </li>
-    </ul>
-</section><!--  End services  -->
+                <!-- Slider Item -->
+                <div class="owl-item home_slider_item">
+                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="home_slider_content_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
+                                        <div class="home_slider_title">A new Online Shop experience.</div>
+                                        <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
+                                        <div class="button button_light home_button"><a href="#">Shop Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Slider Item -->
+                <div class="owl-item home_slider_item">
+                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="home_slider_content_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
+                                        <div class="home_slider_title">A new Online Shop experience.</div>
+                                        <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
+                                        <div class="button button_light home_button"><a href="#">Shop Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<section class="video">
-    <img src="{{ asset('img/video_logo.png') }}" alt="" class="video_logo animated wow fadeInDown"/>
-    <h3 class="animated wow fadeInDown">who we are & what we do</h3>
-    <a href="http://www.youtube.com/embed/cBJyo0tgLnw" id="play_btn" class="fancybox animated wow flipInX" data-wow-duration="2s"></a>
-</section><!--  End video  -->
+            </div>
 
+            <!-- Home Slider Dots -->
 
-<section class="testimonials wrapper">
-    <div class="title animated wow fadeIn">
-        <h2>Testimonials</h2>
-        <h3>what clients are saying about us</h3>
-        <hr class="separator"/>
-    </div>
-
-    <ul class="clearfix">
-        <li class="animated wow fadeInDown">
-            <p><img src="{{ asset('img/quotes.png') }}" alt="" class="quotes"/>Dolor sit amet consectetur isicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud laboris.
-                <span class="triangle"></span>
-            </p>
-            <div class="client">
-                <img src="{{ asset('img/client1.jpg') }}" class="avatar"/>
-                <div class="client_details">
-                    <h4>John Doe</h4>
-                    <h5>CEO</h5>
+            <div class="home_slider_dots_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_slider_dots">
+                                <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
+                                    <li class="home_slider_custom_dot active">01.</li>
+                                    <li class="home_slider_custom_dot">02.</li>
+                                    <li class="home_slider_custom_dot">03.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </li>
-        <li class="animated wow fadeInDown"  data-wow-delay=".2s">
-            <p><img src="{{ asset('img/quotes.png') }}" alt="" class="quotes"/>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam sunt in culpa officia deserunt mollit anim laborum sint occaecat.
-                <span class="triangle"></span>
-            </p>
-            <div class="client">
-                <img src="{{ asset('img/client2.jpg') }}" class="avatar"/>
-                <div class="client_details">
-                    <h4>Alex Martin</h4>
-                    <h5>UI Designer</h5>
-                </div>
-            </div>
-        </li>
-        <li class="animated wow fadeInDown"  data-wow-delay=".4s">
-            <p><img src="{{ asset('img/quotes.png') }}" alt="" class="quotes"/>Aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse slum dolore eu fugiat nulla pariatursint occaecat.
-                <span class="triangle"></span>
-            </p>
-            <div class="client">
-                <img src="{{ asset('img/client3.jpg') }}" class="avatar"/>
-                <div class="client_details">
-                    <h4>Linda Doe</h4>
-                    <h5>Developer</h5>
-                </div>
-            </div>
-        </li>
-    </ul>
-</section><!--  End testimonials  -->
 
-
-<section class="blog_posts">
-    <div class="wrapper">
-        <div class="title animated wow fadeIn">
-            <h2>Recent Posts</h2>
-            <h3>the most recent posts from our blog</h3>
-            <hr class="separator"/>
         </div>
-
-        <ul class="clearfix">
-            <li class="animated wow fadeInDown">
-                <div class="media">
-                    <div class="date">
-                        <span class="day">25</span>
-                        <span class="month">Jun</span>
-                    </div>
-                    <a href="#">
-                        <img src="{{ asset('img/blog_post1.jpg') }}" alt=""/>
-                    </a>
-                </div>
-                <a href="#">
-                    <h1>Sed do eiusmod tempor incididunt.</h1>
-                </a>
-            </li>
-
-            <li class="animated wow fadeInDown" data-wow-delay=".2s">
-                <div class="media">
-                    <div class="date">
-                        <span class="day">11</span>
-                        <span class="month">May</span>
-                    </div>
-                    <a href="#">
-                        <img src="{{ asset('img/blog_post2.jpg') }}" alt=""/>
-                    </a>
-                </div>
-                <a href="#">
-                    <h1>Velit esse cillum dollore fugiat nulla.</h1>
-                </a>
-            </li>
-
-            <li class="animated wow fadeInDown" data-wow-delay=".4s">
-                <div class="media">
-                    <div class="date">
-                        <span class="day">13</span>
-                        <span class="month">Feb</span>
-                    </div>
-                    <a href="#">
-                        <img src="{{ asset('img/blog_post3.jpg') }}" alt=""/>
-                    </a>
-                </div>
-                <a href="#">
-                    <h1>Officia deserunt mollit est anim laborum.</h1>
-                </a>
-            </li>
-
-            <li class="animated wow fadeInDown" data-wow-delay=".6s">
-                <div class="media">
-                    <div class="date">
-                        <span class="day">10</span>
-                        <span class="month">Jan</span>
-                    </div>
-                    <a href="#">
-                        <img src="{{ asset('img/blog_post4.jpg') }}" alt=""/>
-                    </a>
-                </div>
-                <a href="#"><h1>Culpa qui officia deserunt
-                        mollit ani
-                        m.</h1>
-                </a>
-            </li>
-        </ul>
     </div>
-</section><!--  End blog_posts  -->
 
+    <!-- Ads -->
 
-<footer>
-    <div class="wrapper">
-        <div class="rights">
-            <img src="{{ asset('img/footer_logo.png') }}" alt="" class="footer_logo"/>
-            <p>© Sublime. All Rights Reserved 2014 - More Free Templates at <a href="http://pixelhint.com" target="_blank">Pixelhint.com</a></p>
+    <div class="avds">
+        <div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
+            <div class="avds_small">
+                <div class="avds_background" style="background-image:url(images/avds_small.jpg)"></div>
+                <div class="avds_small_inner">
+                    <div class="avds_discount_container">
+                        <img src="images/discount.png" alt="">
+                        <div>
+                            <div class="avds_discount">
+                                <div>20<span>%</span></div>
+                                <div>Discount</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avds_small_content">
+                        <div class="avds_title">Smart Phones</div>
+                        <div class="avds_link"><a href="categories.html">See More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="avds_large">
+                <div class="avds_background" style="background-image:url(images/avds_large.jpg)"></div>
+                <div class="avds_large_container">
+                    <div class="avds_large_content">
+                        <div class="avds_title">Professional Cameras</div>
+                        <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viver ra velit venenatis fermentum luctus.</div>
+                        <div class="avds_link avds_link_large"><a href="categories.html">See More</a></div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <nav>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
     </div>
-</footer><!--  End footer  -->
-<script src='../ga.js'></script>
-</body>
-</html>
+
+    <!-- Products -->
+
+    <div class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                   {{-- <div class="product_grid">
+
+                        @foreach($products as $product)
+                            <!-- Product -->
+                            @php
+                                $image = '';
+                                if(count($product->images) > 0){
+                                    $image = $product->images[0]['img'];
+                                } else {
+                                    $image = 'no_image.png';
+                                }
+                            @endphp
+                            <div class="product">
+                                <div class="product_image"><img src="/images/{{$image}}" alt="{{$product->title}}"></div>
+                                <div class="product_extra product_new"><a href="{{route('showCategory',$product->category['alias'])}}">{{$product->category['title']}}</a></div>
+                                <div class="product_content">
+                                    <div class="product_title"><a href="{{route('showProduct',[$product->category['alias'],$product->id])}}">{{$product->title}}</a></div>
+                                    @if($product->new_price != null)
+                                        <div style="text-decoration: line-through">${{$product->price}}</div>
+                                        <div class="product_price">${{$product->new_price}}</div>
+                                    @else
+                                        <div class="product_price">${{$product->price}}</div>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>--}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad -->
+
+    <div class="avds_xl">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="avds_xl_container clearfix">
+                        <div class="avds_xl_background" style="background-image:url(images/avds_xl.jpg)"></div>
+                        <div class="avds_xl_content">
+                            <div class="avds_title">Amazing Devices</div>
+                            <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus.</div>
+                            <div class="avds_link avds_xl_link"><a href="categories.html">See More</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Icon Boxes -->
+
+    <div class="icon_boxes">
+        <div class="container">
+            <div class="row icon_box_row">
+
+                <!-- Icon Box -->
+                <div class="col-lg-4 icon_box_col">
+                    <div class="icon_box">
+                        <div class="icon_box_image"><img src="images/icon_1.svg" alt=""></div>
+                        <div class="icon_box_title">Free Shipping Worldwide</div>
+                        <div class="icon_box_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Box -->
+                <div class="col-lg-4 icon_box_col">
+                    <div class="icon_box">
+                        <div class="icon_box_image"><img src="images/icon_2.svg" alt=""></div>
+                        <div class="icon_box_title">Free Returns</div>
+                        <div class="icon_box_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Box -->
+                <div class="col-lg-4 icon_box_col">
+                    <div class="icon_box">
+                        <div class="icon_box_image"><img src="images/icon_3.svg" alt=""></div>
+                        <div class="icon_box_title">24h Fast Support</div>
+                        <div class="icon_box_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+
+    <div class="newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="newsletter_border"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="newsletter_content text-center">
+                        <div class="newsletter_title">Subscribe to our newsletter</div>
+                        <div class="newsletter_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros</p></div>
+                        <div class="newsletter_form_container">
+                            <form action="#" id="newsletter_form" class="newsletter_form">
+                                <input type="email" class="newsletter_input" required="required">
+                                <button class="newsletter_button trans_200"><span>Subscribe</span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
