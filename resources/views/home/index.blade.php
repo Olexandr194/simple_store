@@ -13,13 +13,13 @@
 
                 <!-- Slider Item -->
                 <div class="owl-item home_slider_item">
-                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="home_slider_background" style="background-image:url({{ asset('images/home_slider_1.jpg') }})"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
                                     <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                        <div class="home_slider_title">A new Online Shop experience.</div>
+                                        <div class="home_slider_title">Welcome to Simple Store.</div>
                                         <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
                                         <div class="button button_light home_button"><a href="#">Shop Now</a></div>
                                     </div>
@@ -31,13 +31,13 @@
 
                 <!-- Slider Item -->
                 <div class="owl-item home_slider_item">
-                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="home_slider_background" style="background-image:url({{ asset('images/home_slider_1.jpg') }})"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
                                     <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                        <div class="home_slider_title">A new Online Shop experience.</div>
+                                        <div class="home_slider_title">Welcome to Simple Store.</div>
                                         <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
                                         <div class="button button_light home_button"><a href="#">Shop Now</a></div>
                                     </div>
@@ -49,13 +49,13 @@
 
                 <!-- Slider Item -->
                 <div class="owl-item home_slider_item">
-                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="home_slider_background" style="background-image:url({{ asset('images/home_slider_1.jpg') }})"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
                                     <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                        <div class="home_slider_title">A new Online Shop experience.</div>
+                                        <div class="home_slider_title">Welcome to Simple Store.</div>
                                         <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
                                         <div class="button button_light home_button"><a href="#">Shop Now</a></div>
                                     </div>
@@ -93,7 +93,7 @@
     <div class="avds">
         <div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
             <div class="avds_small">
-                <div class="avds_background" style="background-image:url(images/avds_small.jpg)"></div>
+                <div class="avds_background" style="background-image:url({{ asset('images/avds_small.jpg') }})"></div>
                 <div class="avds_small_inner">
                     <div class="avds_discount_container">
                         <img src="images/discount.png" alt="">
@@ -111,7 +111,7 @@
                 </div>
             </div>
             <div class="avds_large">
-                <div class="avds_background" style="background-image:url(images/avds_large.jpg)"></div>
+                <div class="avds_background" style="background-image:url({{ asset('images/avds_large.jpg') }})"></div>
                 <div class="avds_large_container">
                     <div class="avds_large_content">
                         <div class="avds_title">Professional Cameras</div>
@@ -170,7 +170,7 @@
             <div class="row">
                 <div class="col">
                     <div class="avds_xl_container clearfix">
-                        <div class="avds_xl_background" style="background-image:url(images/avds_xl.jpg)"></div>
+                        <div class="avds_xl_background" style="background-image:url({{ asset('images/avds_xl.jpg') }})"></div>
                         <div class="avds_xl_content">
                             <div class="avds_title">Amazing Devices</div>
                             <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus.</div>
