@@ -47,7 +47,7 @@
 
     <div class="home">
         <div class="home_container">
-            <div class="home_background" style="background-image:url(/images/categories.jpg)"></div>
+            <div class="home_background" style="background-image:url({{ asset('/images/categories.jpg') }})"></div>
             <div class="home_content_container">
                 <div class="container">
                     <div class="row">
@@ -99,7 +99,7 @@
                             @if($item->is_available)
                                 <span>In Stock</span>
                             @else
-                                <span style="color: #cc0000">Unavailable</span>
+                                <span style="color: #cc0000">Run out</span>
                             @endif
                         </div>
                         <div class="details_text">
@@ -207,7 +207,7 @@
 
     <!-- Newsletter -->
 
-    <div class="newsletter">
+    {{--<div class="newsletter">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -229,5 +229,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
 @endsection

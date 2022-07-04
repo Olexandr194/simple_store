@@ -90,7 +90,7 @@
 
     <!-- Ads -->
 
-    <div class="avds">
+    {{--<div class="avds">
         <div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
             <div class="avds_small">
                 <div class="avds_background" style="background-image:url({{ asset('images/avds_small.jpg') }})"></div>
@@ -121,7 +121,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
 
     <!-- Products -->
 
@@ -150,7 +150,7 @@
         </div>
     </div>
 
-    <!-- Ad -->
+{{--    <!-- Ad -->
 
     <div class="avds_xl">
         <div class="container">
@@ -236,5 +236,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
 @endsection

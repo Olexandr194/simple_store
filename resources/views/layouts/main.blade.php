@@ -45,9 +45,9 @@
                                     <li class="hassubs">
                                         <a href="categories.html">Categories</a>
                                         <ul>
-                                            {{--@foreach($categories as $category)
-                                                <li><a href="{{route('showCategory',$category->alias)}}">{{$category->title}}</a></li>
-                                            @endforeach--}}
+                                            @foreach($categories as $category)
+                                                <li><a href="#">{{$category->title}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li><a href="#">Accessories</a></li>
@@ -151,10 +151,10 @@
                     <li class="page_menu_item has-children menu_mm">
                         <a href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
                         <ul class="page_menu_selection menu_mm">
-                            <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                            <li class="page_menu_item menu_mm"><a href="categories.html">Category1<i class="fa fa-angle-down"></i></a></li>
+                            <li class="page_menu_item menu_mm"><a href="categories.html">Category2<i class="fa fa-angle-down"></i></a></li>
+                            <li class="page_menu_item menu_mm"><a href="categories.html">Category3<i class="fa fa-angle-down"></i></a></li>
+                            <li class="page_menu_item menu_mm"><a href="categories.html">Category4<i class="fa fa-angle-down"></i></a></li>
                         </ul>
                     </li>
                     <li class="page_menu_item menu_mm"><a href="index.html">Accessories<i class="fa fa-angle-down"></i></a></li>
@@ -189,7 +189,7 @@
                     <div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
                         <div class="footer_logo"><a href="/">Simple Store</a></div>
                         <div class="copyright ml-auto mr-auto"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved {{--| This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib--}}</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
                         <div class="footer_social ml-lg-auto">
                             <ul>
