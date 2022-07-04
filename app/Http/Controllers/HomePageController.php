@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
     public function index(){
-        return view('home.index');
+        $products = Product::orderBy('created_at')->take(8)->get();
+
+
+        return view('home.index', compact('products'));
     }
 }
