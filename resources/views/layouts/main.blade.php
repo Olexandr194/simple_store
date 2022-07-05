@@ -45,9 +45,8 @@
                                     <li class="hassubs">
                                         <a href="categories.html">Categories</a>
                                         <ul>
-                                            @foreach($categories as $category)
-                                                <li><a href="#">{{$category->title}}</a></li>
-                                            @endforeach
+                                                <li><a href="#"></a></li>
+
                                         </ul>
                                     </li>
                                     <li><a href="#">Accessories</a></li>
@@ -121,7 +120,7 @@
                 <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="{{ route('admin') }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
             </ul>
         </div>
     </header>

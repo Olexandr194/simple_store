@@ -12,7 +12,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{ route('admin.categories.show') }}" class="nav-link">
+                    <a href="{{ route('admin.categories.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
                             Категорії товарів
