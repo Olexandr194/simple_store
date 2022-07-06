@@ -21,6 +21,17 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function (){
 
     });
 
+    Route::group(['namespace' => 'Product', 'prefix' => 'products'], function (){
+        Route::get('/show', [App\Http\Controllers\Admin\ProductsController::class, 'index'])->name('admin.products.index');
+        Route::get('/create', [App\Http\Controllers\Admin\ProductsController::class, 'create'])->name('admin.products.create');
+        Route::post('/', [App\Http\Controllers\Admin\ProductsController::class, 'store'])->name('admin.products.store');
+        Route::get('/{product}', [App\Http\Controllers\Admin\ProductsController::class, 'show'])->name('admin.products.show');
+        Route::get('/{product}/edit', [App\Http\Controllers\Admin\ProductsController::class, 'edit'])->name('admin.products.edit');
+        Route::patch('/{product}', [App\Http\Controllers\Admin\ProductsController::class, 'update'])->name('admin.products.update');
+        Route::delete('/{product}', [App\Http\Controllers\Admin\ProductsController::class, 'destroy'])->name('admin.products.destroy');
+
+    });
+
 });
 
 Auth::routes();

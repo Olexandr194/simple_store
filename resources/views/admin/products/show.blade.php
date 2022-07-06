@@ -8,9 +8,9 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
-                        <h1 class="m-0 mr-2">{{ $category->title }}</h1>
-                        <a href="{{ route('admin.categories.edit', $category->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a>
-                        <form action="{{ route('admin.categories.destroy', $category->id) }}" onclick="return confirm('Ви впевнені, що хочете видалити цю категорію?')" method="POST">
+                        <h1 class="m-0 mr-2">{{ $product->title }}</h1>
+                        <a href="{{ route('admin.products.edit', $product->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a>
+                        <form action="{{ route('admin.products.destroy', $product->id) }}" onclick="return confirm('Ви впевнені, що хочете видалити цей товар?')" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="border-0 bg-transparent"><i class="fas fa-trash text-danger"></i></button>
@@ -42,11 +42,11 @@
                                     <tbody>
                                     <tr>
                                         <td>ID</td>
-                                        <td>{{ $category->id }}</td>
+                                        <td>{{ $product->id }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Назва категорії</td>
-                                        <td>{{ $category->title }}</td>
+                                        <td>Назва продукту</td>
+                                        <td>{{ $product->title }}</td>
                                     </tr>
                                     </tbody>
                                 </table>
