@@ -72,15 +72,15 @@
                 <!-- Product Image -->
                 <div class="col-lg-6">
                     <div class="details_image">
-                        <div class="details_image_large"><img src="/images/{{$item->image}}" alt="{{$item->title}}"><div class="product_extra product_new"><a href="categories.html">New</a></div></div>
+                        <div class="details_image_large"><img src="{{ url('storage/' . $item->image) }}" alt="{{$item->title}}">{{--<div class="product_extra product_new"><a href="categories.html">New</a></div>--}}</div>
                         <div class="details_image_thumbnails d-flex flex-row align-items-start justify-content-between">
 
-                            <div class="details_image_thumbnail active" data-image="/images/{{$item->image}}"><img src="/images/{{$item->image}}" alt="{{$item->title}}"></div>
+                            <div class="details_image_thumbnail active" data-image="{{ url('storage/' . $item->image) }}"><img src="{{ url('storage/' . $item->image) }}" alt="{{$item->title}}"></div>
 
-                            <div class="details_image_thumbnail" data-image="/images/product_2.jpg"><img src="/images/product_2.jpg" alt="{{$item->title}}"></div>
-                            <div class="details_image_thumbnail active" data-image="/images/product_5.jpg"><img src="/images/product_5.jpg" alt="{{$item->title}}"></div>
+                            <div class="details_image_thumbnail" data-image="/images/no_image.png"><img src="/images/no_image.png" alt="{{$item->title}}"></div>
+                            <div class="details_image_thumbnail active" data-image="/images/no_image.png"><img src="/images/no_image.png" alt="{{$item->title}}"></div>
 
-                            <div class="details_image_thumbnail" data-image="/images/product_6.jpg"><img src="/images/product_6.jpg" alt="{{$item->title}}"></div>
+                            <div class="details_image_thumbnail" data-image="/images/no_image.png"><img src="/images/no_image.png" alt="{{$item->title}}"></div>
 
                         </div>
                     </div>
@@ -137,7 +137,7 @@
                 <div class="col">
                     <div class="description_title_container">
                         <div class="description_title">Description</div>
-                        <div class="reviews_title"><a href="#">Reviews <span>(1)</span></a></div>
+                        <div class="reviews_title"><a href="#">Reviews <span>()</span></a></div>
                     </div>
                     <div class="description_text">
                         <p>{{$item->description}}</p>

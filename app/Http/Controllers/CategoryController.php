@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function __invoke(){
+    public function index($product_id){
+        $cat = Category::where('id', $product_id)->first();
+        $products = Product::all();
 
-        return 111111;
+        return view('categories.index', compact('products', 'cat'));
     }
 }

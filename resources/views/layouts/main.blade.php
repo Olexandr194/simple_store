@@ -45,12 +45,13 @@
                                     <li class="hassubs">
                                         <a href="categories.html">Categories</a>
                                         <ul>
-                                                <li><a href="#"></a></li>
-
+                                            @foreach($categories as $category)
+                                                <li><a href="{{ route('category.index', $category->id) }}">{{ $category->title }}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="#">Accessories</a></li>
-                                    <li><a href="#">Offers</a></li>
+                                    {{--<li><a href="#">Accessories</a></li>
+                                    <li><a href="#">Offers</a></li>--}}
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </nav>
