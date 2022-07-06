@@ -29,24 +29,24 @@
                 <div class="row">
                     <div class="col">
                         <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                            <div class="logo"><a href="/">Simple Store</a></div>
+                            <div class="logo"><a href="{{ route('main.home') }}">Simple Store</a></div>
                             <nav class="main_nav">
                                 <ul>
                                     <li class="hassubs active">
-                                        <a href="index.html">Home</a>
+                                        <a href="{{ route('main.home') }}">Home</a>
                                         <ul>
-                                            <li><a href="">Categories</a></li>
-                                            <li><a href="product.html">Product</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Check out</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="#">Categories</a></li>
+                                            <li><a href="#">Product</a></li>
+                                            <li><a href="#">Cart</a></li>
+                                            <li><a href="#">Check out</a></li>
+                                            <li><a href="#">Contact</a></li>
                                         </ul>
                                     </li>
                                     <li class="hassubs">
                                         <a href="categories.html">Categories</a>
                                         <ul>
                                             @foreach($categories as $category)
-                                                <li><a href="{{ route('category.index', $category->id) }}">{{ $category->title }}</a></li>
+                                                <li><a href="{{ route('main.category.index', $category->id) }}">{{ $category->title }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -187,7 +187,7 @@
             <div class="row">
                 <div class="col">
                     <div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-                        <div class="footer_logo"><a href="/">Simple Store</a></div>
+                        <div class="footer_logo"><a href="{{ route('main.home') }}">Simple Store</a></div>
                         <div class="copyright ml-auto mr-auto"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved {{--| This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib--}}</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>

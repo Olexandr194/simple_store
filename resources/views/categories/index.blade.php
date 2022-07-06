@@ -68,7 +68,7 @@
                                 <div class="product_image"><img src="{{ url('storage/' . $product->image) }}" alt=""></div>
                                 {{--<div class="product_extra product_new"><a href="#">New</a></div>--}}
                                 <div class="product_content">
-                                    <div class="product_title"><a href="{{ route('show.product', [$product->category_id, $product->id]) }}">{{ $product->title }}</a></div>
+                                    <div class="product_title"><a href="{{ route('main.show.product', [$product->category_id, $product->id]) }}">{{ $product->title }}</a></div>
                                     <div class="product_price">{{ $product->price }}$</div>
 
                                 </div>

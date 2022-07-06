@@ -106,7 +106,7 @@
                     </div>
                     <div class="avds_small_content">
                         <div class="avds_title">Футболки</div>
-                        <div class="avds_link"><a href="{{ route('category.index', 8) }}">See More</a></div>
+                        <div class="avds_link"><a href="{{ route('main.category.index', 8) }}">See More</a></div>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                     <div class="avds_large_content">
                         <div class="avds_title">Кросівки</div>
                         <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viver ra velit venenatis fermentum luctus.</div>
-                        <div class="avds_link avds_link_large"><a href="{{ route('category.index', 9) }}">See More</a></div>
+                        <div class="avds_link avds_link_large"><a href="{{ route('main.category.index', 9) }}">See More</a></div>
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                                 <div class="product_image"><img src="{{ url('storage/' . $product->image) }}" alt=""></div>
                                 {{--<div class="product_extra product_new"><a href="#">New</a></div>--}}
                                 <div class="product_content">
-                                    <div class="product_title"><a href="{{ route('show.product', [$product->category_id, $product->id]) }}">{{ $product->title }}</a></div>
+                                    <div class="product_title"><a href="{{ route('main.show.product', [$product->category_id, $product->id]) }}">{{ $product->title }}</a></div>
                                     <div class="product_price">{{ $product->price }}$</div>
 
                                 </div>
@@ -166,7 +166,7 @@
                         <div class="avds_xl_content">
                             <div class="avds_title">Шорти</div>
                             <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus.</div>
-                            <div class="avds_link avds_xl_link"><a href="{{ route('category.index', 7) }}">See More</a></div>
+                            <div class="avds_link avds_xl_link"><a href="{{ route('main.category.index', 7) }}">See More</a></div>
                         </div>
                     </div>
                 </div>
