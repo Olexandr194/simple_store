@@ -9,8 +9,7 @@ class ProductController extends Controller
 {
     public function show($category, $product_id){
         $item = Product::where('id', $product_id)->first();
-        $category = Category::all();
-
+        $category = Category::where('id', $item->category_id)->first();
         return view('product.index', compact('item', 'category'));
     }
 

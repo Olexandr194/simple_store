@@ -8,7 +8,7 @@ use App\Models\Product;
 class HomePageController extends Controller
 {
     public function index(){
-        $products = Product::orderBy('created_at', 'DESC')->take(8)->get();
+        $products = Product::orderBy('created_at', 'DESC')->paginate(8);
         $categories = Category::all();
 
 

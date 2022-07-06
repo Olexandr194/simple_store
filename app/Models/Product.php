@@ -11,6 +11,6 @@ class Product extends Model
     protected $guarded = false;
 
     public function categories(){
-        return $this->belongsToMany('App\Models\Category');
+        return $this->belongsTo('App\Models\Category');
     }
 }
