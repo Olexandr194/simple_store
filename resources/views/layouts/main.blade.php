@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+@php
+    if(!isset($_COOKIE['cart_id'])) setcookie('cart_id', uniqid());
+@endphp
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>@yield('title')</title>
@@ -43,7 +47,7 @@
                                         </ul>
                                     </li>
                                     <li class="hassubs">
-                                        <a href="categories.html">Categories</a>
+                                        <a href="#">Categories</a>
                                         <ul>
                                             @foreach($categories as $category)
                                                 <li><a href="{{ route('main.category.index', $category->id) }}">{{ $category->title }}</a></li>
@@ -56,8 +60,8 @@
                                 </ul>
                             </nav>
                             <div class="header_extra ml-auto">
-                               {{-- <div class="shopping_cart">
-                                    <a href="{{route('cartIndex')}}">
+                                <div class="shopping_cart">
+                                    <a href="{{ route('main.cart.index') }}">
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                              viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
 											<g>
@@ -70,7 +74,7 @@
 										</svg>
                                         <div>Cart (<span class="cart-qty">{{\Cart::session($_COOKIE['cart_id'])->getTotalQuantity()}}</span>)</div>
                                     </a>
-                                </div>--}}
+                                </div>
                                 <div class="search">
                                     <div class="search_icon">
                                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

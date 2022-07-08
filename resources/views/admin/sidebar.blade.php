@@ -12,6 +12,14 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
+                    <a href="{{ route('main.home') }}" class="nav-link">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Simple Store
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.categories.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
@@ -24,6 +32,14 @@
                         <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>
                             Товари
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.users.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-user-astronaut"></i>
+                        <p>
+                            Користувачі
                         </p>
                     </a>
                 </li>

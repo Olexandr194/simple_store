@@ -8,7 +8,7 @@
 
 @section('custom_js')
     <script src="/js/product.js"></script>
-    {{--<script>
+    <script>
         $(document).ready(function () {
             $('.cart_button').click(function (event) {
                 event.preventDefault()
@@ -22,11 +22,11 @@
             total_qty += qty
             $('.cart-qty').text(total_qty)
             $.ajax({
-                url: "{{route('addToCart')}}",
+                url: "{{route('main.cart.add')}}",
                 type: "POST",
                 data: {
-                    id: id,
-                    qty: qty,
+                    'id': id,
+                    'qty': qty,
                 },
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -39,7 +39,7 @@
                 }
             });
         }
-    </script>--}}
+    </script>
 @endsection
 
 @section('content')

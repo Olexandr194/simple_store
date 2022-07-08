@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
     Route::get('/', [\App\Http\Controllers\Main\HomePageController::class, 'index'])->name('main.home');
-    Route::get('/{category}/{product_id}', [\App\Http\Controllers\Main\ProductController::class, 'show'])->name('main.show.product');
-    Route::get('/{cat}', [\App\Http\Controllers\Main\CategoryController::class, 'index'])->name('main.category.index');
+    Route::get('/category/{category_id}/{product_id}', [\App\Http\Controllers\Main\ProductController::class, 'show'])->name('main.show.product');
+    Route::get('/category/{category_id}', [\App\Http\Controllers\Main\CategoryController::class, 'index'])->name('main.category.index');
+    Route::get('/cart', [\App\Http\Controllers\Main\CartController::class, 'index'])->name('main.cart.index');
+    Route::post('/cart/add', [\App\Http\Controllers\Main\CartController::class, 'add'])->name('main.cart.add');
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function (){
@@ -29,6 +32,17 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function (){
         Route::get('/{product}/edit', [App\Http\Controllers\Admin\ProductsController::class, 'edit'])->name('admin.products.edit');
         Route::patch('/{product}', [App\Http\Controllers\Admin\ProductsController::class, 'update'])->name('admin.products.update');
         Route::delete('/{product}', [App\Http\Controllers\Admin\ProductsController::class, 'destroy'])->name('admin.products.destroy');
+
+    });
+
+    Route::group(['namespace' => 'User', 'prefix' => 'users'], function (){
+        Route::get('/show', [App\Http\Controllers\Admin\UsersController::class, 'index'])->name('admin.users.index');
+        Route::get('/create', [App\Http\Controllers\Admin\UsersController::class, 'create'])->name('admin.users.create');
+        Route::post('/', [App\Http\Controllers\Admin\UsersController::class, 'store'])->name('admin.users.store');
+        Route::get('/{user}', [App\Http\Controllers\Admin\UsersController::class, 'show'])->name('admin.users.show');
+        Route::get('/{user}/edit', [App\Http\Controllers\Admin\UsersController::class, 'edit'])->name('admin.users.edit');
+        Route::patch('/{user}', [App\Http\Controllers\Admin\UsersController::class, 'update'])->name('admin.users.update');
+        Route::delete('/{user}', [App\Http\Controllers\Admin\UsersController::class, 'destroy'])->name('admin.users.destroy');
 
     });
 
