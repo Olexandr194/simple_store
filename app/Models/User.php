@@ -12,14 +12,14 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    const ROLE_ADMIN = 0;
-    const ROLE_CUSTOMER = 1;
+    const ROLE_ADMIN = 1;
+    const ROLE_CUSTOMER = 0;
 
     public static function getRoles()
     {
         return [
-          self::ROLE_ADMIN => 'Адміністратор',
-          self::ROLE_CUSTOMER => 'Користувач',
+          1 => 'Адміністратор',
+          0 => 'Користувач',
         ];
     }
 

@@ -10,7 +10,7 @@ Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
     Route::post('/cart/add', [\App\Http\Controllers\Main\CartController::class, 'add'])->name('main.cart.add');
 });
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function (){
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function (){
     Route::get('/', [App\Http\Controllers\Admin\IndexController::class, '__invoke'])->name('admin');
 
     Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function (){

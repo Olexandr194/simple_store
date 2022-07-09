@@ -57,6 +57,17 @@
                                     {{--<li><a href="#">Accessories</a></li>
                                     <li><a href="#">Offers</a></li>--}}
                                     <li><a href="contact.html">Contact</a></li>
+                                    @guest()
+                                    <li><a href="{{ route('admin') }}">Увійти</a></li>
+                                    @endguest
+                                    @auth()
+                                    <li>
+                                        <form action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                            <input class="btn btn-dark" type="submit" value="Вийти">
+                                        </form>
+                                    </li>
+                                    @endauth
                                 </ul>
                             </nav>
                             <div class="header_extra ml-auto">
