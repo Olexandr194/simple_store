@@ -3,44 +3,49 @@
 namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
+use App\Models\Card;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Darryldecode\Cart\Cart;
+use Illuminate\Support\Facades\Auth;
+
 
 class CartController extends Controller
 {
-    public function index(\Darryldecode\Cart\Cart $items)
+    public function index()
     {
-        return view('cart.index', compact($items));
+        return view('cart.index');
     }
 
     public function add(Request $request)
     {
+        $product_id = $request->input('id');
+        $product_qty = $request->input('qty');
 
-        $product = Product::where('id', $request->id)->first();
+        if(Auth::check())
+        {
+            $product = Product::where('id', $product_id)->first();
 
-
-        /* isset($_COOKIE['cart_id']) ? \Cart::session($_COOKIE['cart_id'])->getTotalQuantity() : '0';*/
-
-        if (!isset($_COOKIE['cart_id'])) setcookie('cart_id', uniqid());
-        $cart_id = $_COOKIE['cart_id'];
-        \Cart::session($cart_id);
-
-        \Cart::add([
-            'id' => $product->id,
-            'name' => $product->title,
-            'price' => $product->price,
-            'quantity' => (int)$request->qty,
-            'attributes' => [
-                'img' => $product->image ?? 'no_image.png'
-            ]
-        ]);
-
-        $items = \Cart::getContent();
-
-        /*return response()->json(\Cart::getContent());*/
-
-        return (compact('items'));
+            if($product)
+            {
+                if(Card::where('product_id', $product_id)->where('user_id', Auth::id())->exists())
+                {
+                    return response()->json(['status' => "Даний продукт уже знаходиться в кошику"]);
+                }
+                else
+                {
+                    $cartItem = new Card();
+                    $cartItem->product_id = $product_id;
+                    $cartItem->user_id = Auth::id();
+                    $cartItem->product_qty = $product_qty;
+                    $cartItem->save();
+                    return response()->json(['status' => "Продукт додано у кошик"]);
+                }
+            }
+        }
+        else
+        {
+            return response()->json(['status' => "Авторизуйтеся щоб продовжити."]);
+        }
     }
 }

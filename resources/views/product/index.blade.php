@@ -31,8 +31,8 @@
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: (data) => {
-                    console.log(data)
+                success: function (response) {
+                    alert(response.status)
                 },
                 error: (data) => {
                     console.log(data)

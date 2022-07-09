@@ -57,8 +57,15 @@
                                     {{--<li><a href="#">Accessories</a></li>
                                     <li><a href="#">Offers</a></li>--}}
                                     <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
                                     @guest()
-                                    <li><a href="{{ route('admin') }}">Увійти</a></li>
+                                    {{--<li><a href="{{ route('admin') }}">Увійти</a></li>--}}
+                                        <li>
+                                            <form action="{{ route('login') }}">
+                                                <input class="btn btn-dark" type="submit" value="Увійти">
+                                            </form>
+                                        </li>
                                     @endguest
                                     @auth()
                                     <li>

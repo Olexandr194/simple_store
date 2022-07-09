@@ -6,8 +6,12 @@ Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
     Route::get('/', [\App\Http\Controllers\Main\HomePageController::class, 'index'])->name('main.home');
     Route::get('/category/{category_id}/{product_id}', [\App\Http\Controllers\Main\ProductController::class, 'show'])->name('main.show.product');
     Route::get('/category/{category_id}', [\App\Http\Controllers\Main\CategoryController::class, 'index'])->name('main.category.index');
-    Route::get('/cart', [\App\Http\Controllers\Main\CartController::class, 'index'])->name('main.cart.index');
     Route::post('/cart/add', [\App\Http\Controllers\Main\CartController::class, 'add'])->name('main.cart.add');
+
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/cart', [\App\Http\Controllers\Main\CartController::class, 'index'])->name('main.cart.index');
+    });
+
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function (){
