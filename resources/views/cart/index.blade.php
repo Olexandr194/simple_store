@@ -7,13 +7,115 @@
 @endsection
 
 @section('custom_js')
-    <script src="{{ asset('js/cart.js') }}"></script>
+    <script>
+        $(function () {
+            $(document).on('click', '.quantity_inc', function (event) {
+                event.preventDefault();
+                let inc_value = $(this).closest('.cart_item').find('#quantity_input').val();
+                let value = parseInt(inc_value);
+                value = isNaN(value) ? 0 : value;
+                if (value < 25) {
+                    value++;
+                    $(this).closest('.cart_item').find('#quantity_input').val(value);
+                }
+            });
+            $(document).on('click', '.quantity_dec', function (event) {
+                event.preventDefault();
+                let dec_value = $(this).closest('.cart_item').find('#quantity_input').val();
+                let value = parseInt(dec_value);
+                value = isNaN(value) ? 0 : value;
+                if (value > 1) {
+                    value--;
+                    $(this).closest('.cart_item').find('#quantity_input').val(value);
+                }
+            });
+            $(document).on('click', '.delete-item', function (event) {
+                event.preventDefault();
+                let product_id = $(this).closest('.cart_item').find('.product_id').val();
+                $.ajax({
+                    url: "{{ route('main.cart.delete') }}",
+                    type: "POST",
+                    data: {
+                        'product_id': product_id,
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: (data) => {
+                        $('.cart_info').html(data);
+
+                    },
+                    error: (data) => {
+                        console.log(data)
+                    }
+                });
+            });
+            $(document).on('click', '.quantity_control', function (event) {
+                event.preventDefault();
+                let product_id = $(this).closest('.cart_item').find('.product_id').val();
+                let product_qty = $(this).closest('.cart_item').find('#quantity_input').val();
+                $.ajax({
+                    url: "{{ route('main.cart.update') }}",
+                    type: "POST",
+                    data: {
+                        'product_id': product_id,
+                        'product_qty': product_qty,
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: (data) => {
+                        $('.cart_info').html(data);
+
+                    },
+                    error: (data) => {
+                        console.log(data)
+                    }
+                });
+            });
+            $(document).on('click', '.clear_cart_button', function (event) {
+                event.preventDefault();
+
+               $.ajax({
+                    url: "{{ route('main.cart.clear') }}",
+                    type: "POST",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: (data) => {
+                        $('.cart_info').html(data);
+                    },
+                    error: (data) => {
+                        console.log(data)
+                    }
+                });
+            });
+            $(document).on('click', '.update_cart_button', function (event) {
+                event.preventDefault();
+
+                $.ajax({
+                    url: "{{ route('main.cart.updateCart') }}",
+                    type: "POST",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: (data) => {
+                        $('.cart_info').html(data);
+                    },
+                    error: (data) => {
+                        console.log(data)
+                    }
+                });
+            });
+        });
+
+    </script>
 @endsection
 
 @section('content')
     <div class="home">
         <div class="home_container">
-            <div class="home_background" style="background-image:url(/images/cart.jpg)"></div>
+            <div class="home_background" style="background-image:url({{ asset('/images/1561183001_36.jpg') }})"></div>
             <div class="home_content_container">
                 <div class="container">
                     <div class="row">
@@ -50,53 +152,63 @@
             </div>
             <div class="row cart_items_row">
                 <div class="col">
-
-                    <!-- Cart Item -->
-                    <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-
+                    <div class="ajax-delete">
+                        @php $total_price =0; @endphp
                         @foreach($items as $item)
-                        <!-- Name -->
-                        <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
-                            <div class="cart_item_image">
+                            <!-- Cart Item -->
+                            <div
+                                class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                                <!-- Name -->
 
+                                <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
 
+                                    <div class="cart_item_image">
 
-                                <div><img src="{{ $item->image }}" alt=""></div>
-                            </div>
-                            <div class="cart_item_name_container">
-                                <div class="cart_item_name"><a href="#">{{ $item->title }}</a></div>
-                                <div class="cart_item_edit"><a href="#">Edit Product</a></div>
-                            </div>
-                        </div>
-                        <!-- Price -->
-                        <div class="cart_item_price">$790.90</div>
-                        <!-- Quantity -->
-                        <div class="cart_item_quantity">
-                            <div class="product_quantity_container">
-                                <div class="product_quantity clearfix">
-                                    <span>Qty</span>
-                                    <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-                                    <div class="quantity_buttons">
-                                        <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-                                        <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                                        <div><img src="{{ url('storage/' . $item->products->image) }}" alt=""></div>
+                                    </div>
+                                    <div class="cart_item_name_container">
+                                        <div class="cart_item_name"><a href="#">{{ $item->products->title }}</a></div>
+                                        <div class="cart_item_edit">
+                                            <button class="btn btn-danger delete-item">Remove Product</button>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- Price -->
+                                <div class="cart_item_price">${{$item->products->price}}</div>
+                                <!-- Quantity -->
+                                <div class="cart_item_quantity">
+                                    <div class="product_quantity_container">
+                                        <div class="product_quantity clearfix">
+                                            <span>Qty</span>
+                                            <input type="hidden" class="product_id" value="{{ $item->product_id }}">
+                                            <input id="quantity_input" type="text" pattern="[0-9]*"
+                                                   value="{{ $item->product_qty }}">
+                                            <div class="quantity_buttons">
+                                                <div id="quantity_inc_button" class="quantity_inc quantity_control"><i
+                                                        class="fa fa-chevron-up" aria-hidden="true"></i></div>
+                                                <div id="quantity_dec_button" class="quantity_dec quantity_control"><i
+                                                        class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Total -->
+                                <div class="cart_item_total">${{ $item->product_qty * $item->products->price }}</div>
                             </div>
-                        </div>
-                        <!-- Total -->
-                        <div class="cart_item_total">$790.90</div>
+                            @php $total_price += $item->product_qty * $item->products->price; @endphp
                         @endforeach
                     </div>
-
                 </div>
             </div>
             <div class="row row_cart_buttons">
                 <div class="col">
                     <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
-                        <div class="button continue_shopping_button"><a href="#">Continue shopping</a></div>
+                        <div class="button continue_shopping_button"><a href="{{ route('main.home') }}">Continue
+                                shopping</a></div>
                         <div class="cart_buttons_right ml-lg-auto">
                             <div class="button clear_cart_button"><a href="#">Clear cart</a></div>
-                            <div class="button update_cart_button"><a href="#">Update cart</a></div>
+                            <div class="button update_cart_button"><a href="#">Update
+                                    cart</a></div>
                         </div>
                     </div>
                 </div>
@@ -148,7 +260,7 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Subtotal</div>
-                                    <div class="cart_total_value ml-auto">$790.90</div>
+                                    <div class="cart_total_value ml-auto">${{ $total_price }}</div>
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Shipping</div>
@@ -156,7 +268,7 @@
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Total</div>
-                                    <div class="cart_total_value ml-auto">$790.90</div>
+                                    <div class="cart_total_value ml-auto">${{ $total_price }}</div>
                                 </li>
                             </ul>
                         </div>

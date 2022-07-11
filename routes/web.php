@@ -7,7 +7,10 @@ Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
     Route::get('/category/{category_id}/{product_id}', [\App\Http\Controllers\Main\ProductController::class, 'show'])->name('main.show.product');
     Route::get('/category/{category_id}', [\App\Http\Controllers\Main\CategoryController::class, 'index'])->name('main.category.index');
     Route::post('/cart/add', [\App\Http\Controllers\Main\CartController::class, 'add'])->name('main.cart.add');
-    Route::post('/cart/', [\App\Http\Controllers\Main\CartController::class, 'delete'])->name('main.cart.delete');
+    Route::post('/cart/delete', [\App\Http\Controllers\Main\CartController::class, 'delete'])->name('main.cart.delete');
+    Route::post('/cart/update', [\App\Http\Controllers\Main\CartController::class, 'update'])->name('main.cart.update');
+    Route::post('/cart/clear', [\App\Http\Controllers\Main\CartController::class, 'clear'])->name('main.cart.clear');
+    Route::post('/cart/update-cart', [\App\Http\Controllers\Main\CartController::class, 'updateCart'])->name('main.cart.updateCart');
 
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/cart', [\App\Http\Controllers\Main\CartController::class, 'index'])->name('main.cart.index');
