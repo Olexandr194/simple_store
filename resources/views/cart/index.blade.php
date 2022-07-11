@@ -272,7 +272,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="button checkout_button"><a href="#">Proceed to checkout</a></div>
+                        <div class="button checkout_button"><a href="{{ route('main.checkout.index') }}">Proceed to checkout</a></div>
                     </div>
                 </div>
             </div>

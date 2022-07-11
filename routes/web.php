@@ -14,6 +14,7 @@ Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
 
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/cart', [\App\Http\Controllers\Main\CartController::class, 'index'])->name('main.cart.index');
+        Route::get('/checkout', [\App\Http\Controllers\Main\CheckoutController::class, 'index'])->name('main.checkout.index');
     });
 
 });
