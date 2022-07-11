@@ -49,7 +49,12 @@ class ProductsController extends Controller
     public function update(ProductUpdateRequest $request, Product $product)
     {
         $data = $request->validated();
-        $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+        if (isset ($data['image'])) {
+            $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+        }
+        else {
+            $data['image'] = $product['image'];
+        }
         $product->update($data);
         return view('admin.products.show', compact('product'));
     }

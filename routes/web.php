@@ -7,6 +7,7 @@ Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
     Route::get('/category/{category_id}/{product_id}', [\App\Http\Controllers\Main\ProductController::class, 'show'])->name('main.show.product');
     Route::get('/category/{category_id}', [\App\Http\Controllers\Main\CategoryController::class, 'index'])->name('main.category.index');
     Route::post('/cart/add', [\App\Http\Controllers\Main\CartController::class, 'add'])->name('main.cart.add');
+    Route::post('/cart/', [\App\Http\Controllers\Main\CartController::class, 'delete'])->name('main.cart.delete');
 
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/cart', [\App\Http\Controllers\Main\CartController::class, 'index'])->name('main.cart.index');
@@ -52,6 +53,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
 
 });
 
-Auth::routes();
+Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
+Auth::routes();
 

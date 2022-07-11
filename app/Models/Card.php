@@ -11,6 +11,6 @@ class Card extends Model
     protected $guarded = false;
 
     public function products(){
-        return $this->hasMany('App\Models\Product');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }
