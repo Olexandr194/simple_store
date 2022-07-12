@@ -15,6 +15,7 @@ Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/cart', [\App\Http\Controllers\Main\CartController::class, 'index'])->name('main.cart.index');
         Route::get('/checkout', [\App\Http\Controllers\Main\CheckoutController::class, 'index'])->name('main.checkout.index');
+        Route::post('/order', [\App\Http\Controllers\Main\OrderController::class, 'makeOrder'])->name('main.order.index');
     });
 
 });
@@ -53,6 +54,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
         Route::patch('/{user}', [App\Http\Controllers\Admin\UsersController::class, 'update'])->name('admin.users.update');
         Route::delete('/{user}', [App\Http\Controllers\Admin\UsersController::class, 'destroy'])->name('admin.users.destroy');
 
+    });
+
+    Route::group(['namespace' => 'Order', 'prefix' => 'orders'], function (){
+        Route::get('/', [App\Http\Controllers\Admin\OrdersController::class, 'index'])->name('admin.orders.index');
     });
 
 });

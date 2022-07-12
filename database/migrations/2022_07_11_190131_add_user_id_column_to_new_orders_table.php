@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('customer_id')->unsigned();
-
-            $table->foreign('customer_id')->on('customers')->references('id')->onDelete('cascade');
-            $table->timestamps();
+        Schema::table('new_orders', function (Blueprint $table) {
+            $table->string('user_id');
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::table('new_orders', function (Blueprint $table) {
+            $table->dropColumn('user_id');
+        });
     }
 };

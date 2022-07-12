@@ -40,6 +40,8 @@
 
     <div class="cart_info mb-5">
         <div class="container">
+            <form action="{{ route('main.order.index') }}" method="POST">
+                @csrf
             <div class="row">
                 <div class="col-6">
                     <div class="card">
@@ -56,24 +58,29 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @php $total_price =0; @endphp
                                 @foreach($items as $item)
+
                                     <tr>
                                         <td><img src="{{ url('storage/' . $item->products->image) }}" alt="image" class="bg-transparent w-25"></td>
                                         <td class="text-center">{{ $item->products->title }}</td>
                                         <td class="text-center">{{ $item->product_qty }}</td>
-                                        <td class="text-center">${{ $item->products->price }}</td>
-
+                                        <td class="text-center">${{ $item->products->price * $item->product_qty }}</td>
                                     </tr>
+                                    @php $total_price += $item->product_qty * $item->products->price; @endphp
                                 @endforeach
                                 </tbody>
                             </table>
                             <hr>
-                            <button class="btn btn-dark float-right" href="#">Замовити</button>
-
+                            <tr>Загальна вартість: ${{ $total_price }}</tr>
+                            <input type="hidden" class="form-control" name="total_price" value="{{ $total_price }}">
+                            <hr>
+                            <button class="btn btn-dark float-right" type="submit" onclick="return alert('Дякуємо за покупку!)')" href="{{ route('main.order.index') }}">Замовити</button>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 @endsection

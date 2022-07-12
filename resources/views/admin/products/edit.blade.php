@@ -31,6 +31,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group w-25">
+                                <label>Назва товару</label>
                                 <input type="text" class="form-control" name="title" placeholder="Назва товару"
                                        value="{{ $product->title }}">
                                 @error('title')
@@ -44,6 +45,7 @@
                                 @enderror
                             </div>
                             <div class="form-group w-25">
+                                <label>Вкажіть ціну</label>
                                 <input type="text" class="form-control" name="price" placeholder="Ціна"
                                        value="{{ $product->price }}">
                                 @error('price')
@@ -51,6 +53,7 @@
                                 @enderror
                             </div>
                             <div class="form-group w-25">
+                                <label>Вкажіть кількість</label>
                                 <input type="text" class="form-control" name="quantity" placeholder="Кількість"
                                        value="{{ $product->quantity }}">
                                 @error('quantity')

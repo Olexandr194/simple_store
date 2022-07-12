@@ -43,6 +43,14 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.orders.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-money-check"></i>
+                        <p>
+                            Замовлення
+                        </p>
+                    </a>
+                </li>
 
             </ul>
     </div>
