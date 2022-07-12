@@ -19,55 +19,40 @@
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
-        <!-- /.content-header -->
-
-        <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
                 <div class="row">
-                </div>
-                <div class="row">
-                    <div class="col-10">
+                    <div class="col-md-10">
                         <div class="card">
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap text">
+                            <div class="card-body">
+                                <table class="table table-bordered">
                                     <thead>
-                                    <tr  class="text-center">
-                                        <th>ID</th>
-                                        <th>Замовник</th>
-                                        <th>Email</th>
-                                        <th>Назва продукту</th>
-                                        <th>Кількість</th>
-                                        <th>Загальна вартість</th>
-                                        <th>Дата замовлення</th>
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Дата замовлення</th>
+                                        <th class="text-center">Загальна вартість</th>
+                                        <th class="text-center">Замовник</th>
+                                        <th class="text-center">Деталі</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($orders as $order)
                                     <tr>
                                         <td class="text-center">{{ $order->id }}</td>
-                                        <td class="text-center">{{ $order->users->name }}</td>
-                                        <td class="text-center">{{ $order->users->email }}</td>
-                                        <td>{{ $order->products->title }}</td>
-                                        <td class="text-center">{{ $order->product_qty }}</td>
-                                        <td class="text-center">{{ $order->product_qty * $order->price }}</td>
-                                        <td class="text-center">{{ $order->created_at }}</td>
+                                        <td>{{ $order->created_at }}</td>
+                                        <td class="text-center">{{ $order->total_price }}$</td>
+                                        <td>{{ $order->users->name }} {{ $order->users->surname }}</td>
+                                        <td class="text-center"><a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-outline-dark">Переглянути</a> </td>
                                     </tr>
                                     @endforeach
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- /.card-body -->
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
-
-            </div><!-- /.container-fluid -->
+            </div>
         </section>
-        <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
 @endsection
 

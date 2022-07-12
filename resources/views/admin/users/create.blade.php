@@ -36,6 +36,24 @@
                             @enderror
                         </div>
                         <div class="form-group w-25">
+                            <input type="text" class="form-control" name="surname" placeholder="Прізвище" value="{{ old('surname') }}">
+                            @error('surname')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group w-25">
+                            <input type="text" class="form-control" name="address" placeholder="Адреса" value="{{ old('address') }}">
+                            @error('address')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group w-25">
+                            <input type="text" class="form-control" name="phone" placeholder="Контактний номер телефону" value="{{ old('phone') }}">
+                            @error('phone')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group w-25">
                             <input type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
                             @error('email')
                             <div class="text-danger">{{ $message }}</div>

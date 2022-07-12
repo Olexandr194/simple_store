@@ -58,6 +58,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
 
     Route::group(['namespace' => 'Order', 'prefix' => 'orders'], function (){
         Route::get('/', [App\Http\Controllers\Admin\OrdersController::class, 'index'])->name('admin.orders.index');
+        Route::get('/{order}', [App\Http\Controllers\Admin\OrdersController::class, 'show'])->name('admin.orders.show');
     });
 
 });

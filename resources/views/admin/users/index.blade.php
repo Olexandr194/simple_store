@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <div class="card">
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
@@ -39,6 +39,8 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Ім'я</th>
+                                        <th>Прізвище</th>
+                                        <th>Email</th>
                                         <th colspan="3" class="text-center">Опції</th>
                                     </tr>
                                     </thead>
@@ -47,6 +49,8 @@
                                     <tr>
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
+                                        <td>{{ $user->surname }}</td>
+                                        <td>{{ $user->email }}</td>
                                         <td class="text-center"><a href="{{ route('admin.users.show', $user->id) }}"><i class="far fa-eye"></i></a></td>
                                         <td class="text-center"><a href="{{ route('admin.users.edit', $user->id) }}"><i class="fas fa-pencil-alt text-success"></i></a></td>
                                         <td class="text-center"><form action="{{ route('admin.users.destroy', $user->id) }}" onclick="return confirm('Ви впевнені, що хочете видалити користувача?')" method="POST">

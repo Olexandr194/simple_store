@@ -31,6 +31,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group w-25">
+                                <label>Ім'я</label>
                                 <input type="text" class="form-control" name="name" placeholder="Ім'я"
                                        value="{{ $user->name }}">
                                 @error('name')
@@ -38,6 +39,31 @@
                                 @enderror
                             </div>
                             <div class="form-group w-25">
+                                <label>Прізвище</label>
+                                <input type="text" class="form-control" name="surname" placeholder="Прізвище"
+                                       value="{{ $user->surname }}">
+                                @error('surname')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group w-25">
+                                <label>Адреса</label>
+                                <input type="text" class="form-control" name="address" placeholder="Адреса"
+                                       value="{{ $user->address }}">
+                                @error('address')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group w-25">
+                                <label>Контактний номер телефону</label>
+                                <input type="text" class="form-control" name="phone" placeholder="Контактний номер телефону"
+                                       value="{{ $user->phone }}">
+                                @error('phone')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group w-25">
+                                <label>Email</label>
                                 <input type="text" class="form-control" name="email" placeholder="Email"
                                        value="{{ $user->email }}">
                                 @error('email')

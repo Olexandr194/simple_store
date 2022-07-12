@@ -35,10 +35,10 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-5">
                         <div class="card">
                             <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
+                                <table class="table table-hover text-nowrap table-bordered">
                                     <tbody>
                                     <tr>
                                         <td>ID</td>
@@ -47,6 +47,22 @@
                                     <tr>
                                         <td>Ім'я</td>
                                         <td>{{ $user->name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Прізвище</td>
+                                        <td>{{ $user->surname }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>{{ $user->email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Адреса</td>
+                                        <td>{{ $user->address }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Контактний номер телефону</td>
+                                        <td>{{ $user->phone }}</td>
                                     </tr>
                                     </tbody>
                                 </table>
