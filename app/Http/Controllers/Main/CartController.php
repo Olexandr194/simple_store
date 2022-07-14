@@ -15,13 +15,9 @@ class CartController extends Controller
     {
         $product_id = $request->input('id');
         $product_qty = $request->input('qty');
-        $product_total_qty = $request->input('total_qty');
 
         if (Auth::check()) {
             $product = Product::where('id', $product_id)->first();
-
-            /*  Cart::add($product_total_qty = $request->input('total_qty'));*/
-
             if ($product) {
                 if (Card::where('product_id', $product_id)->where('user_id', Auth::id())->exists()) {
                     return response()->json(['status' => "Даний продукт уже знаходиться в кошику"]);
